@@ -1,2 +1,0 @@
-C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\UnitTests\obj\Debug\UnitTests.csprojAssemblyReference.cache
-C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\UnitTests\obj\Debug\UnitTests.csproj.CoreCompileInputs.cache

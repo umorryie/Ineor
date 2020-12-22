@@ -269,9 +269,9 @@ namespace Ineor.Test
                 }
             };
             var expectedCountries = new List<Country>()
-        {
-            correctcountry4, correctcountry1, correctcountry2
-        };
+            {
+                correctcountry4, correctcountry1, correctcountry2
+            };
 
             // Act
             var resultCountries = GetVatArray(urlString.ToString(), "highest");
