@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pesja\\OneDrive\\Desktop\\Ineor\\Ineor\\Ineor\\Ineor.csproj": {}
+    "C:\\Users\\pesja\\OneDrive\\Desktop\\Ineor\\IneorCSharp\\Ineor\\Ineor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pesja\\OneDrive\\Desktop\\Ineor\\Ineor\\Ineor\\Ineor.csproj": {
+    "C:\\Users\\pesja\\OneDrive\\Desktop\\Ineor\\IneorCSharp\\Ineor\\Ineor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pesja\\OneDrive\\Desktop\\Ineor\\Ineor\\Ineor\\Ineor.csproj",
+        "projectUniqueName": "C:\\Users\\pesja\\OneDrive\\Desktop\\Ineor\\IneorCSharp\\Ineor\\Ineor.csproj",
         "projectName": "Ineor",
-        "projectPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\Ineor\\Ineor\\Ineor\\Ineor.csproj",
+        "projectPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\Ineor\\IneorCSharp\\Ineor\\Ineor.csproj",
         "packagesPath": "C:\\Users\\pesja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\Ineor\\Ineor\\Ineor\\obj\\",
+        "outputPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\Ineor\\IneorCSharp\\Ineor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pesja\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,32 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.15.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
