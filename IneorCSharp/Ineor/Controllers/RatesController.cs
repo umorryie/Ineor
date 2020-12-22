@@ -16,10 +16,12 @@ namespace Ineor.Controllers
     public class RatesController : ControllerBase
     {
         private string url { get; set; }
+        protected IJsonDeterminator jsonDeterminator { get; set; }
 
-        public RatesController()
+        public RatesController(IJsonDeterminator determineJson)
         {
             url = "https://euvatrates.com/rates.json";
+            jsonDeterminator = determineJson;
         }
 
         [EnableCors()]
@@ -28,7 +30,7 @@ namespace Ineor.Controllers
         public IActionResult  GetSpecificCountryInfo(string countryCode)
         {
             var urlString = new WebClient().DownloadString(url);
-            var jsonRates = GetCountry(urlString, countryCode);
+            var jsonRates = jsonDeterminator.GetCountry(urlString, countryCode);
 
             if (jsonRates == null)
             {
@@ -47,7 +49,7 @@ namespace Ineor.Controllers
             var jsonFromUrl = JObject.Parse(urlString);
             var jsonRates = jsonFromUrl["rates"];
 
-            return Ok(GetVatArray(jsonRates, "lowest"));
+            return Ok(jsonDeterminator.GetVatArray(jsonRates, "lowest"));
         }
 
         [EnableCors()]
@@ -59,36 +61,7 @@ namespace Ineor.Controllers
             var jsonFromUrl = JObject.Parse(urlString);
             var jsonRates = jsonFromUrl["rates"];
 
-            return Ok(GetVatArray(jsonRates, "highest"));
-        }
-
-        public List<Country> GetVatArray(JToken rates, string ratesValue)
-        {
-            var countryList = new List<Country> { };
-            IList<string> keys = JObject.Parse(rates.ToString()).Properties().Select(p => p.Name).ToList();
-
-            foreach (var key in keys)
-            {
-                countryList.Add(rates[key].ToObject<Country>());
-            }
-
-            // order list from lowest to highest VAT
-            countryList = countryList.OrderBy(o => o.standard_rate).ToList(); ;
-
-            if (ratesValue == "lowest")
-            {
-                return countryList.GetRange(0, 3);
-            }
-            else
-            {
-                return countryList.GetRange(countryList.Count - 3, 3);
-            }
-        }
-
-        public JToken GetCountry(string urlJsonString, string countryCode) {
-            var jsonFromUrl = JObject.Parse(urlJsonString);
-            
-            return jsonFromUrl["rates"][countryCode];
+            return Ok(jsonDeterminator.GetVatArray(jsonRates, "highest"));
         }
     }
 }

@@ -15,8 +15,6 @@ namespace Ineor
 {
     public class Startup
     {
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,6 +25,7 @@ namespace Ineor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IJsonDeterminator, JsonDeterminator>();
             services.AddCors(options => {
                 options.AddDefaultPolicy(builder => {
                     builder.WithOrigins("http://localhost:4200/");
@@ -50,7 +49,7 @@ namespace Ineor
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
                 c.RoutePrefix = "swagger";
             });
-
+            app.UseDeveloperExceptionPage();
             app.UseHttpsRedirection();
 
             app.UseRouting();

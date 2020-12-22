@@ -65,4 +65,3 @@ C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
-C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\obj\Debug\netcoreapp3.1\Ineor.csprojAssemblyReference.cache

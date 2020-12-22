@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 namespace Ineor.Test
 {
     [TestClass]
-    public class Test : RatesController
+    public class Test
     {
-        public Test() { }
+        private IJsonDeterminator controller;
+        public Test()
+        {
+            controller = new JsonDeterminator();
+        }
 
         [TestMethod]
         public void ShouldReturnNullOnWrongCountryCode()
@@ -35,7 +39,7 @@ namespace Ineor.Test
             };
 
             // Act
-            var country = GetCountry(urlString.ToString(), "SI");
+            var country = controller.GetCountry(urlString.ToString(), "SI");
 
             // Assert
             Assert.AreEqual(null, country);
@@ -74,7 +78,7 @@ namespace Ineor.Test
             };
 
             // Act
-            var resultCountry = GetCountry(urlString.ToString(), "AT");
+            var resultCountry = controller.GetCountry(urlString.ToString(), "AT");
 
             // Assert
             Assert.AreEqual(correctCountry, resultCountry);
@@ -174,7 +178,7 @@ namespace Ineor.Test
         };
 
             // Act
-            var resultCountries = GetVatArray(urlString.ToString(), "highest");
+            var resultCountries = controller.GetVatArray(urlString.ToString(), "highest");
 
             // Assert
             Assert.AreEqual(expectedCountries, resultCountries);
@@ -274,7 +278,7 @@ namespace Ineor.Test
             };
 
             // Act
-            var resultCountries = GetVatArray(urlString.ToString(), "highest");
+            var resultCountries = controller.GetVatArray(urlString.ToString(), "highest");
 
             // Assert
             Assert.AreEqual(expectedCountries, resultCountries);
