@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -21,22 +22,23 @@ namespace Ineor.Controllers
             url = "https://euvatrates.com/rates.json";
         }
 
+        [EnableCors()]
         [HttpPost]
         [Route("countryVat/{countryCode}")]
         public IActionResult  GetSpecificCountryInfo(string countryCode)
         {
             var urlString = new WebClient().DownloadString(url);
-            var jsonFromUrl = JObject.Parse(urlString);
-            var jsonRates = jsonFromUrl["rates"][countryCode];
+            var jsonRates = GetCountry(urlString, countryCode);
 
             if (jsonRates == null)
             {
-                return NotFound( new { message = "Wrong country code. Try again." });
+                return Ok( new { message = "Wrong country code. Try again." });
             }
 
             return Ok( jsonRates.ToObject<Country>() );
         }
 
+        [EnableCors()]
         [HttpGet]
         [Route("lowestVat")]
         public IActionResult GetThreeLowestVatRates()
@@ -48,6 +50,7 @@ namespace Ineor.Controllers
             return Ok(GetVatArray(jsonRates, "lowest"));
         }
 
+        [EnableCors()]
         [HttpGet]
         [Route("highestVat")]
         public IActionResult GetThreeHighestVatRates()
@@ -59,7 +62,7 @@ namespace Ineor.Controllers
             return Ok(GetVatArray(jsonRates, "highest"));
         }
 
-        private List<Country> GetVatArray(JToken rates, string ratesValue)
+        public List<Country> GetVatArray(JToken rates, string ratesValue)
         {
             var countryList = new List<Country> { };
             IList<string> keys = JObject.Parse(rates.ToString()).Properties().Select(p => p.Name).ToList();
@@ -80,6 +83,12 @@ namespace Ineor.Controllers
             {
                 return countryList.GetRange(countryList.Count - 3, 3);
             }
+        }
+
+        public JToken GetCountry(string urlJsonString, string countryCode) {
+            var jsonFromUrl = JObject.Parse(urlJsonString);
+            
+            return jsonFromUrl["rates"][countryCode];
         }
     }
 }

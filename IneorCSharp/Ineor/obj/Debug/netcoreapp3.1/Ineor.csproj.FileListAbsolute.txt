@@ -26,7 +26,6 @@ C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\Ineor.runtimeconfig.dev.json
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\Ineor.dll
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\Ineor.pdb
-C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\obj\Debug\netcoreapp3.1\Ineor.csprojAssemblyReference.cache
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\obj\Debug\netcoreapp3.1\Ineor.AssemblyInfoInputs.cache
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\obj\Debug\netcoreapp3.1\Ineor.AssemblyInfo.cs
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\obj\Debug\netcoreapp3.1\Ineor.csproj.CoreCompileInputs.cache
@@ -64,3 +63,6 @@ C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\pesja\OneDrive\Desktop\Ineor\IneorCSharp\Ineor\obj\Debug\netcoreapp3.1\Ineor.csprojAssemblyReference.cache
